@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "universityName": "American International University",
+    "courseName": "Computer Science 101",
+    "description": "An introductory course to computer science, covering basic programming concepts and algorithms.",
+    "duration": "12 weeks"
+  },
+  {
+    "id": "2",
+    "universityName": "Northern University Bangladesh",
+    "courseName": "Machine Learning",
+    "description": "Learn the fundamentals of machine learning, including supervised and unsupervised learning techniques.",
+    "duration": "10 weeks"
+  },
+  {
+    "id": "3",
+    "universityName": "North South University",
+    "courseName": "Artificial Intelligence",
+    "description": "Explore the principles of AI, including neural networks, natural language processing, and robotics.",
+    "duration": "14 weeks"
+  },
+  {
+    "id": "4",
+    "universityName": "Independent University, Bangladesh",
+    "courseName": "Data Science",
+    "description": "A comprehensive course on data science, covering data analysis, visualization, and machine learning.",
+    "duration": "8 weeks"
+  },
+  {
+    "id": "5",
+    "universityName": "United International University",
+    "courseName": "Quantum Computing",
+    "description": "An advanced course on quantum computing, covering qubits, quantum algorithms, and quantum hardware.",
+    "duration": "16 weeks"
+  },
+  {
+    "id": "6",
+    "universityName": "East West University",
+    "courseName": "Software Engineering",
+    "description": "Learn the principles of software engineering, including design patterns, testing, and project management.",
+    "duration": "12 weeks"
+  },
+  {
+    "id": "7",
+    "universityName": "University of Asia Pacific",
+    "courseName": "Cybersecurity",
+    "description": "A course on cybersecurity fundamentals, including cryptography, network security, and ethical hacking.",
+    "duration": "10 weeks"
+  },
+  {
+    "id": "8",
+    "universityName": "Daffodil International University",
+    "courseName": "Web Development",
+    "description": "A hands-on course on web development, covering HTML, CSS, JavaScript, and modern frameworks.",
+    "duration": "8 weeks"
+  },
+  {
+    "id": "9",
+    "universityName": "National University of BD",
+    "courseName": "Mobile App Development",
+    "description": "Learn to build mobile apps for iOS and Android using Flutter and React Native.",
+    "duration": "10 weeks"
+  },
+  {
+    "id": "10",
+    "universityName": "University of Liberal Arts Bangladesh",
+    "courseName": "Cloud Computing",
+    "description": "A course on cloud computing, covering AWS, Azure, and Google Cloud Platform.",
+    "duration": "12 weeks"
+  }
+]
