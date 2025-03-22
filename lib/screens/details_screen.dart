@@ -1,30 +1,49 @@
 import 'package:flutter/material.dart';
 import '../models/course_model.dart';
+import '../utils/responsive_padding.dart';
+import '../utils/responsive_text.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Course course;
 
-  DetailsScreen({required this.course});
+  const DetailsScreen({required this.course});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(course.courseName),
+        title: Hero(
+          tag: 'course-${course.id}',
+          child: Material(
+            color: Colors.transparent,
+            child: ResponsiveText(
+              text: course.courseName,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('University: ${course.universityName}', style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10),
-            Text('Duration: ${course.duration}', style: TextStyle(fontSize: 18)),
-            SizedBox(height: 20),
-            Text('Description:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            SizedBox(height: 10),
-            Text(course.description, style: TextStyle(fontSize: 16)),
-          ],
+      body: ResponsivePadding(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              ResponsiveText(
+                text: 'University: ${course.universityName}',
+                fontWeight: FontWeight.bold,
+              ),
+              SizedBox(height: 10),
+              ResponsiveText(text: 'Duration: ${course.duration}'),
+              SizedBox(height: 20),
+              ResponsiveText(
+                text: 'Description:',
+                fontWeight: FontWeight.bold,
+              ),
+              SizedBox(height: 10),
+              ResponsiveText(text: course.description),
+            ],
+          ),
         ),
       ),
     );

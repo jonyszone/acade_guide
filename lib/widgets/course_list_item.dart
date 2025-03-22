@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/course_model.dart';
+import '../utils/responsive_text.dart';
 
 class CourseListItem extends StatelessWidget {
   final Course course;
@@ -13,18 +14,21 @@ class CourseListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: EdgeInsets.symmetric(vertical: 8),
       elevation: 2,
       child: ListTile(
         contentPadding: EdgeInsets.all(16),
-        title: Text(
-          course.courseName,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        title: Hero(
+          tag: 'course-${course.id}',
+          child: Material(
+            color: Colors.transparent,
+            child: ResponsiveText(
+              text: course.courseName,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-        subtitle: Text(
-          course.universityName,
-          style: TextStyle(fontSize: 16),
-        ),
+        subtitle: ResponsiveText(text: course.universityName),
         trailing: Icon(Icons.arrow_forward_ios, color: Colors.blue),
         onTap: onTap,
       ),
