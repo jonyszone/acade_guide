@@ -24,6 +24,9 @@ class _SearchScreenState extends State<SearchScreen> {
     super.initState();
     _courseProvider = Provider.of<CourseProvider>(context, listen: false);
     _courseProvider.loadCourses();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _courseProvider.loadCourses();
+    });
   }
 
   @override

@@ -18,7 +18,9 @@ class CourseProvider with ChangeNotifier {
     _courses = await _courseService.loadCourses();
     _filteredCourses = _courses;
     _isLoading = false;
-    notifyListeners();
+    Future.microtask(() {
+      notifyListeners();
+    });
   }
 
   void searchCourses(String query) {
@@ -31,6 +33,8 @@ class CourseProvider with ChangeNotifier {
           course.universityName.toLowerCase().contains(query.toLowerCase()))
           .toList();
     }
-    notifyListeners();
+    Future.microtask(() {
+      notifyListeners();
+    });
   }
 }
