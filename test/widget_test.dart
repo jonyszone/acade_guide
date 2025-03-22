@@ -5,26 +5,33 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:acade_guide/models/course_model.dart';
+import 'package:acade_guide/widgets/course_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:acade_guide/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  testWidgets('CourseListItem should display course details', (WidgetTester tester) async {
+    final course = Course(
+      id: '1',
+      universityName: 'Harvard University',
+      courseName: 'Computer Science 101',
+      description: 'An introductory course to computer science.',
+      duration: '12 weeks',
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: CourseListItem(
+            course: course,
+            onTap: () {},
+          ),
+        ),
+      ),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Computer Science 101'), findsOneWidget);
+    expect(find.text('Harvard University'), findsOneWidget);
   });
 }
